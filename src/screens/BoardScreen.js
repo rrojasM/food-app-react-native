@@ -12,7 +12,7 @@ const BoardScreen = ({ navigation }) => {
       <View style={styles.textContainer}>
         <View>
           <Text style={{ fontSize: 32, fontWeight: 'bold', textAlign: 'center' }}>Delicius Food</Text>
-          <Text style={{ marginTop: 20, textAlign: 'center', fontSize: 17, color: COLORS.GREY, padding: 5 }}>We help you to find best and delicious food</Text>
+          <Text style={{ marginTop: 20, textAlign: 'center', fontSize: 17, color: COLORS.GREY }}>We help you to find best and delicious food</Text>
         </View>
         <View style={styles.indicatorContainer}>
           <View style={styles.currentIndicator} />
