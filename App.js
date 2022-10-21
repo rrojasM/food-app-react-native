@@ -1,6 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { StatusBar } from 'react-native';
-import COLORS from './src/utils/COLORS';
+import COLORS from './src/utils/colors';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import BoardScreen from './src/screens/BoardScreen';

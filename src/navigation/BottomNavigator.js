@@ -1,6 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { View } from 'react-native';
-import COLORS from '../utils/COLORS';
+import COLORS from '../utils/colors';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import HomeScreen from '../screens/HomeScreen';
@@ -11,14 +12,15 @@ const Tab = createBottomTabNavigator();
 const BottomNavigator = () => {
     return (
         <Tab.Navigator
-            tabBarOptions={{
+            screenOptions={{
                 style: {
                     height: 55,
                     borderTopWidth: 0,
                     elevation: 0
                 },
                 showLabel: false,
-                activeTintColor: COLORS.PRIMARY
+                activeTintColor: COLORS.PRIMARY,
+                headerShown: false
             }}
         >
             <Tab.Screen
