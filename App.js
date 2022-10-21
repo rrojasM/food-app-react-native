@@ -1,26 +1,24 @@
 import React from 'react';
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { StatusBar } from 'react-native';
+import COLORS from './src/utils/COLORS';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import BoardScreen from './src/screens/BoardScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
+import BottomNavigator from './src/navigation/BottomNavigator';
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Food App</Text>
-    </View>
+    <NavigationContainer>
+      <StatusBar backgroundColor={COLORS.WHITE} barStyle="dark-content" />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='BoardScreen' component={BoardScreen} />
+        <Stack.Screen name='Home' component={BottomNavigator} />
+        <Stack.Screen name='DetailsScreen' component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#E88504',
-    flex: 1
-  }
-});
-
-export default App;
+export default React.memo(App);
