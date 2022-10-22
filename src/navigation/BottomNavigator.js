@@ -28,7 +28,7 @@ const BottomNavigator = () => {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <Icon name="local-mall" color={color} size={28} />
+                        <Icon name="home-filled" color={color} size={28} />
                     ),
                 }}
             />
