@@ -12,6 +12,16 @@ const Button = ({ title, onPress = () => { } }) => {
     )
 }
 
+const ButtonSecondary = ({ title, onPress = () => { } }) => {
+    return (
+        <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+            <View style={{ ...styles.btnContainer, backgroundColor: COLORS.WHITE }}>
+                <Text style={{ ...styles.title, color: COLORS.PRIMARY }}>{title}</Text>
+            </View>
+        </TouchableOpacity>
+    )
+}
+
 const styles = StyleSheet.create({
     title: {
         color: COLORS.WHITE,
@@ -27,4 +37,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export { Button };
+export { Button, ButtonSecondary };

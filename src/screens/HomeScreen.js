@@ -12,6 +12,12 @@ const cartWidth = width / 2 - 20;
 const HomeScreen = ({ navigation }) => {
   const [selectCategoryIndex, setSelectCategoryIndex] = useState(0);
 
+  function currencyFormat(num) {
+    return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
+  console.log(currencyFormat(2500));
+
   const ListCategories = () => {
     return (
       <ScrollView
@@ -51,13 +57,13 @@ const HomeScreen = ({ navigation }) => {
             <Image source={food.image} style={{ height: 120, width: 120 }} />
           </View>
           <View style={{ marginHorizontal: 20 }}>
-            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{food.name}</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: COLORS.DARK }}>{food.name}</Text>
             <Text style={{ fontSize: 14, color: COLORS.GREY, marginTop: 2 }}>{food.ingredients}</Text>
           </View>
           <View
             style={{ marginTop: 10, marginHorizontal: 20, flexDirection: 'row', justifyContent: 'space-between' }}
           >
-            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>${food.price}</Text>
+            <Text style={{ fontSize: 18, fontWeight: 'bold', color: COLORS.DARK }}>{currencyFormat(food.price)}</Text>
             <View style={styles.addToCartBtn}>
               <Icon name="add" size={20} color={COLORS.WHITE} />
             </View>
@@ -73,17 +79,17 @@ const HomeScreen = ({ navigation }) => {
       <View style={styles.header}>
         <View>
           <View style={{ flexDirection: 'row' }}>
-            <Text style={{ fontSize: 28 }}>Hello</Text>
-            <Text style={{ fontSize: 28, fontWeight: 'bold', marginLeft: 10 }}>Ariz</Text>
+            <Text style={{ fontSize: 28, color: COLORS.GREY }}>Hello</Text>
+            <Text style={{ fontSize: 28, fontWeight: 'bold', marginLeft: 10, color: COLORS.GREY }}>Guf</Text>
           </View>
-          <Text style={{ marginTop: 5, fontSize: 22, color: COLORS.GREY }}>What do you want today</Text>
+          <Text style={{ marginTop: 5, fontSize: 22, color: COLORS.GREY }}>What do you want today?</Text>
         </View>
-        <Image source={require('../assets/person.png')} style={{ height: 50, width: 50, borderRadius: 25 }} />
+        <Image source={require('../assets/person.png')} style={{ height: 60, width: 60, borderRadius: 20, top: 10 }} />
       </View>
-      <View style={{ marginTop: 40, flexDirection: 'row', paddingHorizontal: 20, bottom:10 }}>
+      <View style={{ marginTop: 40, flexDirection: 'row', paddingHorizontal: 20 }}>
         <View style={styles.inputContainer}>
-          <Icon name='search' size={28} />
-          <TextInput placeholder='Search for food' style={{ flex: 1, fontSize: 18 }} />
+          <Icon name='search' size={28} color="#FFF" />
+          <TextInput placeholderTextColor="#FFF" placeholder='Search for food' style={{ flex: 1, fontSize: 18 }} />
         </View>
         <View style={styles.shortBtn}>
           <Icon name='tune' size={28} color={COLORS.WHITE} />
@@ -136,8 +142,8 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE
   },
   addToCartBtn: {
-    height: 30,
-    width: 30,
+    height: 35,
+    width: 35,
     borderRadius: 20,
     backgroundColor: COLORS.PRIMARY,
     justifyContent: 'center',
@@ -147,17 +153,16 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    bottom:10
+    paddingHorizontal: 20
   },
   inputContainer: {
     flex: 1,
     height: 50,
     borderRadius: 10,
     flexDirection: 'row',
-    backgroundColor: COLORS.LIGHT,
+    backgroundColor: COLORS.SECONDARY,
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 20
   },
   shortBtn: {
     width: 50,
