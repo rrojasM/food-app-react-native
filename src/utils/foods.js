@@ -19,14 +19,14 @@ const foods = [
         name: 'Sushi Makizushi',
         price: 80,
         ingredients: 'Mixed Pizza',
-        image: require('../assets/meatPizza.png'),
+        image: require('../assets/sushiMakizushi.png'),
     },
     {
         id: uuid.v4(),
         name: 'Chicken Burger',
         price: 95,
         ingredients: 'Salmon Meat',
-        image: require('../assets/sushiMakizushi.png'),
+        image: require('../assets/chickenBurger.png'),
     }
 ];
 
