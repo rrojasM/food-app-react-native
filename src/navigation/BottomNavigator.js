@@ -27,8 +27,8 @@ const BottomNavigator = () => {
                 name='HomeScreen'
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: ({ color }) => (
-                        <Icon name="home-filled" color={color} size={28} />
+                    tabBarIcon: () => (
+                        <Icon name="home-filled" color={COLORS.PRIMARY} size={28} />
                     ),
                 }}
             />
@@ -36,8 +36,8 @@ const BottomNavigator = () => {
                 name='LocalMall'
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: ({ color }) => (
-                        <Icon name="local-mall" color={color} size={28} />
+                    tabBarIcon: () => (
+                        <Icon name="local-mall" color={COLORS.PRIMARY} size={28} />
                     ),
                 }}
             />
@@ -45,7 +45,7 @@ const BottomNavigator = () => {
                 name='Search'
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: ({ color }) => (
+                    tabBarIcon: () => (
                         <View
                             style={{
                                 height: 60,
@@ -69,17 +69,18 @@ const BottomNavigator = () => {
                 name='Favorite'
                 component={HomeScreen}
                 options={{
-                    tabBarIcon: ({ color }) => (
-                        <Icon name='favorite' color={color} size={28} />
+                    tabBarIcon: () => (
+                        <Icon name='favorite' color={COLORS.PRIMARY} size={28} />
                     )
                 }}
             />
             <Tab.Screen
                 name='Cart'
                 component={CartScreen}
+                
                 options={{
-                    tabBarIcon: ({ color }) => (
-                        <Icon name='shopping-cart' color={color} size={28} />
+                    tabBarIcon: () => (
+                        <Icon name='shopping-cart' color={COLORS.PRIMARY} size={28} />
                     ),
                 }}
             />
