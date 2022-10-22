@@ -16,8 +16,6 @@ const HomeScreen = ({ navigation }) => {
     return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
-  console.log(currencyFormat(2500));
-
   const ListCategories = () => {
     return (
       <ScrollView
